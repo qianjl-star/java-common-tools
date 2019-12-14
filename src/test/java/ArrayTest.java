@@ -2,6 +2,7 @@ import org.testng.annotations.Test;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Random;
 
 public class ArrayTest {
     @Test
@@ -126,6 +127,20 @@ public class ArrayTest {
         System.out.println(Arrays.toString(arr));
 
         Arrays.fill(arr, arr.length-3, arr.length, 3);
+        System.out.println(Arrays.toString(arr));
+    }
+
+    @Test
+    public void test数组排序() {
+        int[] arr = new int[100];
+        for (int i=0; i<100; i++) {
+            arr[i] = new Random().nextInt(100);
+        }
+        System.out.println(Arrays.toString(arr));
+        /*
+        永久排序，不是临时
+         */
+        Arrays.sort(arr);
         System.out.println(Arrays.toString(arr));
     }
 }
