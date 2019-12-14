@@ -77,4 +77,45 @@ public class ArrayTest {
             }
         });
     }
+
+    @Test
+    public void test数组拷贝1() {
+        int[] arr1 = {1,2,3,4,5};
+
+        int[] arr3 = new int[3];
+        arr3[0] = arr1[0];
+        arr3[1] = arr1[1];
+        arr3[2] = arr1[2];
+        System.out.println(Arrays.toString(arr3));
+    }
+
+    @Test
+    public void test数组拷贝2() {
+        int[] arr1 = {1,2,3,4,5};
+        System.out.println(Arrays.toString(arr1));
+        int[] arr2 = Arrays.copyOf(arr1, 3);
+        System.out.println(Arrays.toString(arr2));
+    }
+
+    @Test
+    public void test数组拷贝3() {
+        int[] arr1 = {1,2,3,4,5};
+        int[] arr2 = Arrays.copyOfRange(arr1, 1, arr1.length);
+        /*
+        不会出现越界
+        不包含最后一个索引的数值，为 <to
+        新生成的数组中不包含arr1[arr1.length]
+        from <= index < to
+        数组下标从0开始
+         */
+        System.out.println(Arrays.toString(arr2));
+    }
+
+    @Test
+    public void test数组拷贝4() {
+        int[] arr1 = {1,2,3,4,5};
+        int[] arr2 = {6,7,8,9,10};
+        System.arraycopy(arr2, arr2.length-3, arr1, arr1.length-3, 3);
+        System.out.println(Arrays.toString(arr1));
+    }
 }
