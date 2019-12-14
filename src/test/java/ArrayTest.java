@@ -118,4 +118,14 @@ public class ArrayTest {
         System.arraycopy(arr2, arr2.length-3, arr1, arr1.length-3, 3);
         System.out.println(Arrays.toString(arr1));
     }
+
+    @Test
+    public void test数组填充() {
+        int[] arr = new int[6];
+        Arrays.fill(arr, 6);
+        System.out.println(Arrays.toString(arr));
+
+        Arrays.fill(arr, arr.length-3, arr.length, 3);
+        System.out.println(Arrays.toString(arr));
+    }
 }
