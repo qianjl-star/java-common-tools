@@ -143,4 +143,54 @@ public class ArrayTest {
         Arrays.sort(arr);
         System.out.println(Arrays.toString(arr));
     }
+
+    @Test
+     public void test多维数组() {
+        /*
+        第一维数组必须指定长度
+        多维数组的不同维度之间数据类型也应该相同
+         */
+        String[][] users = new String[5][];
+        users[0] = new String[] {"001", "张三", "男", "24"};
+        users[1] = new String[] {"002", "李四", "女", "20"};
+        users[2] = new String[4];
+        users[2][0] = "003";
+        users[2][1] = "王五";
+    }
+
+    @Test
+    public void test多维数组打印() {
+        String[][] users = new String[5][];
+        users[0] = new String[] {"001", "张三", "男", "24"};
+        users[1] = new String[] {"002", "李四", "女", "20"};
+
+        System.out.println("for循环打印：");
+        for(int index=0; index<users.length; index++) {
+            System.out.println(Arrays.toString(users[index]));
+        }
+    }
+
+    @Test
+    public void test多维数组打印2() {
+        String[][] users = new String[5][];
+        users[0] = new String[] {"001", "张三", "男", "24"};
+        users[1] = new String[] {"002", "李四", "女", "20"};
+
+        System.out.println("for each打印：");
+        for (String[] user : users) {
+            System.out.println(Arrays.toString(user));
+        }
+    }
+
+    @Test
+    public void test多维数组打印3() {
+        String[][] users = new String[5][];
+        users[0] = new String[] {"001", "张三", "男", "24"};
+        users[1] = new String[] {"002", "李四", "女", "20"};
+        /*
+        user表示在集合中的每一个元素的中间变量
+         */
+        System.out.println("Lambda打印：");
+        Arrays.asList(users).forEach(user -> System.out.println(Arrays.toString(user)));
+    }
 }
