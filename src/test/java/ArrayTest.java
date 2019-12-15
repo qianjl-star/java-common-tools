@@ -193,4 +193,26 @@ public class ArrayTest {
         System.out.println("Lambda打印：");
         Arrays.asList(users).forEach(user -> System.out.println(Arrays.toString(user)));
     }
+
+    public int[] twoSum(int[] arr, int target) {
+        System.out.println("随机生成的数组为：" + Arrays.toString(arr));
+        System.out.println("随机生成的目标数为" + target);
+        for (int i=0; i<arr.length; i++) {
+            for (int j=i+1; j<arr.length; j++){
+                if(arr[i] + arr[j] == target) {
+                    return new int[] {i, j};
+                }
+            }
+        }
+        return null;
+    }
+    @Test
+    public void test应用练习() {
+        int[] arr = new int[15];
+        for (int index=0; index<arr.length; index++) {
+            arr[index] = new Random().nextInt(10);
+        }
+        int target = new Random().nextInt(20);
+        System.out.println(Arrays.toString(twoSum(arr, target)));
+    }
 }
