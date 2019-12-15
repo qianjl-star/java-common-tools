@@ -1,5 +1,7 @@
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
+
 public class StringTest {
     @Test
     public void test() {
@@ -81,16 +83,31 @@ public class StringTest {
         sb.append(" ");
         sb.append("world");
         sb.append("!");
-        System.out.println(sb);
+        System.out.println(sb.toString());
+
+        sb.setLength(10);
+        System.out.println(sb.toString());
+
+        sb.setLength(20);
+        System.out.println(sb.toString());
     }
 
     @Test
-    public void testTime() {
+    public void testRunTime() {
         long start = System.currentTimeMillis();
         System.out.println(System.currentTimeMillis() - start);
     }
 
-
+    @Test
+    public void testStringBuilder() {
+        long start = System.currentTimeMillis();
+        StringBuilder sb =new StringBuilder();
+        for (int index=0; index<20000; index++){
+            sb.append(index);
+        }
+        System.out.println(sb.length());
+        System.out.println(System.currentTimeMillis() - start + "ms");
+    }
 
 
 }
