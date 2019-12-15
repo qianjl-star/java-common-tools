@@ -109,5 +109,9 @@ public class StringTest {
         System.out.println(System.currentTimeMillis() - start + "ms");
     }
 
-
+    @Test
+    public void testStringPrint() {
+        String str = "hello";
+        System.out.println(str);
+    }
 }
