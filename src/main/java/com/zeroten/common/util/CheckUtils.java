@@ -15,10 +15,17 @@ public class CheckUtils {
 //            }
 //        });
         for(String string : strings) {
-            if (string ==null || string == "") {
+            if (string == null || string == "") {
                 return false;
             }
         }
         return true;
+    }
+
+    public static boolean isEmpty(Object[] arr) {
+        if(arr == null) {
+            return true;
+        }
+        return false;
     }
 }

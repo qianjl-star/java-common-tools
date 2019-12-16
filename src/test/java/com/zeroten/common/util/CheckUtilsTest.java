@@ -19,4 +19,26 @@ public class CheckUtilsTest {
         Assert.assertEquals(CheckUtils.isAnyEmpty(str4), true);
     }
 
+    @Test
+    public void testIsEmpty(){
+        Integer[] arr0 = null;
+        Character[] arr1 = null;
+        Boolean[] arr2 = null;
+        String[] arr3 = null;
+        Short[] arr4 = null;
+        Long[] arr5 = null;
+        Byte[] arr6 = null;
+        Float[] arr7 = null;
+        Double[] arr8 = null;
+
+        Assert.assertEquals(CheckUtils.isEmpty(arr0), true);
+        Assert.assertEquals(CheckUtils.isEmpty(arr1), true);
+        Assert.assertEquals(CheckUtils.isEmpty(arr2), true);
+        Assert.assertEquals(CheckUtils.isEmpty(arr3), true);
+        Assert.assertEquals(CheckUtils.isEmpty(arr4), true);
+        Assert.assertEquals(CheckUtils.isEmpty(arr5), true);
+        Assert.assertEquals(CheckUtils.isEmpty(arr6), true);
+        Assert.assertEquals(CheckUtils.isEmpty(arr7), true);
+        Assert.assertEquals(CheckUtils.isEmpty(arr8), true);
+    }
 }
