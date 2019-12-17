@@ -3,6 +3,8 @@ package com.zeroten.common.util;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
+
 public class CheckUtilsTest {
     @Test
     public void testIsAnyEmpty(){
@@ -73,5 +75,12 @@ public class CheckUtilsTest {
          */
 //        Assert.assertEquals(CheckUtils.equalsInteger(new Integer(), new Integer()), true);
         Assert.assertEquals(CheckUtils.equalsInteger(new Integer(1), 1), true);
+    }
+
+    @Test
+    public void testSort() {
+        int[] array = {9,5,1,3,7,8,2,4,6};
+        int[] array1 = {1,2,3,4,5,6,7,8,9};
+        Assert.assertEquals(Arrays.toString(CheckUtils.sort(array)), Arrays.toString(array1));
     }
 }
