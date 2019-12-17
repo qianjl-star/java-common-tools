@@ -41,4 +41,37 @@ public class CheckUtilsTest {
         Assert.assertEquals(CheckUtils.isEmpty(arr7), true);
         Assert.assertEquals(CheckUtils.isEmpty(arr8), true);
     }
+
+    @Test
+    public void testEquals(){
+        Assert.assertEquals(CheckUtils.equals(null, null), false);
+        Assert.assertEquals(CheckUtils.equals(null, "a"), false);
+        Assert.assertEquals(CheckUtils.equals("a", null), false);
+        Assert.assertEquals(CheckUtils.equals("a", "a"), true);
+        Assert.assertEquals(CheckUtils.equals("a", "aa"), false);
+        Assert.assertEquals(CheckUtils.equals(new String("ss"), new String("ss")), true);
+        Assert.assertEquals(CheckUtils.equals(new String("ss"), new String("s")), false);
+        /*
+        相当于开辟了一个空间但是里面没有数据，有指向该空间的指针，为String str=""
+        null表示没有指向堆中的内存地址
+         */
+        Assert.assertEquals(CheckUtils.equals(new String(), new String()), true);
+        Assert.assertEquals(CheckUtils.equals(new String("a"), "a"), true);
+    }
+    @Test
+    public void testEqualsInteger(){
+        Assert.assertEquals(CheckUtils.equalsInteger(null, null), false);
+        Assert.assertEquals(CheckUtils.equalsInteger(null, 1), false);
+        Assert.assertEquals(CheckUtils.equalsInteger(1, null), false);
+        Assert.assertEquals(CheckUtils.equalsInteger(1, 1), true);
+        Assert.assertEquals(CheckUtils.equalsInteger(1, 11), false);
+        Assert.assertEquals(CheckUtils.equalsInteger(new Integer(1), new Integer(1)), true);
+        Assert.assertEquals(CheckUtils.equalsInteger(new Integer(1), new Integer(11)), false);
+        /*
+        为什么new String()可以
+        new Integer()不可以
+         */
+//        Assert.assertEquals(CheckUtils.equalsInteger(new Integer(), new Integer()), true);
+        Assert.assertEquals(CheckUtils.equalsInteger(new Integer(1), 1), true);
+    }
 }

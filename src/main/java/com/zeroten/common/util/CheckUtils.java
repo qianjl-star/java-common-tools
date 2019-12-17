@@ -28,4 +28,22 @@ public class CheckUtils {
         }
         return false;
     }
+
+    public static boolean equals(String str1, String str2) {
+        if(str1 == null || str2 == null) {
+            return false;
+        }
+        if(str1.equals(str2))
+            return true;
+        return false;
+    }
+
+    public static boolean equalsInteger(Integer n1, Integer n2) {
+        if(n1 == null || n2 == null) {
+            return false;
+        }
+        if(n1.equals(n2))
+            return true;
+        return false;
+    }
 }
