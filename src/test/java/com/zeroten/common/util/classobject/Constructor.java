@@ -3,6 +3,7 @@ package com.zeroten.common.util.classobject;
 public class Constructor {
     public static int count = 0;
     public static int index = 1;
+    {}
     // 构造器、构造方法
     public Constructor() {
         System.out.println("无参构造");
@@ -13,6 +14,9 @@ public class Constructor {
         System.out.println("    传入的 count：" + count);
         System.out.println("    类状态/属性 count：" + this.count);
         this.count = count;
+        // this 返回的是当前类的对象，下面两句与上面的等值
+//        Constructor con = new Constructor();
+//        con.count = count;
     }
     public Constructor(int count, int index) {
         this(count);
